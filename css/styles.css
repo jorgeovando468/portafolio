@@ -1,0 +1,376 @@
+:root {
+  /* Paleta Futurista */
+  --bg-color: #050505;
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  
+  /* Acentos Neón */
+  --accent-gradient: linear-gradient(135deg, #00f2ff 0%, #7000ff 100%);
+  --accent-glow: 0 0 20px rgba(0, 242, 255, 0.3);
+  
+  /* Tipografía */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Reset Básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Efecto de Fondo Ambiental */
+.background-glow {
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Contenedores */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Header & Navegación --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  /* Efecto Cristal (Glassmorphism) */
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.navegacion-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+/* Botón menú móvil (Oculto en escritorio) */
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+.hamburger { display: block; width: 24px; height: 2px; background: #fff; }
+
+/* --- Hero Section --- */
+.hero {
+  padding: 8rem 0 6rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Tipografía responsiva */
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  /* Texto con degradado */
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.chip {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Botones */
+.hero-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.boton.primary {
+  background: #fff;
+  color: #000;
+}
+
+.boton.primary:hover {
+  background: #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+.boton.ghost {
+  border: 1px solid var(--surface-border);
+  color: #fff;
+}
+
+.boton.ghost:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+/* --- Secciones Generales --- */
+.seccion { padding: 5rem 0; }
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Línea decorativa bajo títulos */
+.titulo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+/* --- Cards (Servicios y Proyectos) --- */
+.grid-servicios, .grid-proyectos, .grid-testimonios {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-servicios, .grid-testimonios { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-proyectos { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+
+.card {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(112, 0, 255, 0.5);
+}
+
+/* Estilos específicos Servicios */
+.servicio h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.servicio p { color: var(--text-secondary); }
+
+/* Estilos específicos Proyectos */
+.proyecto { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+
+.proyecto-media {
+  height: 200px;
+  background: #151515;
+  border-bottom: 1px solid var(--surface-border);
+  display: flex; /* Placeholder center */
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.proyecto-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proyecto h3, .proyecto p, .proyecto .tags, .proyecto-ctas {
+  padding: 0 1.5rem;
+}
+
+.proyecto h3 { margin-top: 1.5rem; font-family: var(--font-heading); }
+.proyecto p { margin: 0.5rem 0 1rem; color: var(--text-secondary); font-size: 0.95rem; }
+
+.tags { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.tags span {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #00f2ff;
+  background: rgba(0, 242, 255, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.proyecto-ctas {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn.small {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+}
+.btn.small:hover { text-decoration: underline; }
+
+/* --- Formulario --- */
+.formulario fieldset { border: none; padding: 0; }
+.contenedor-campos { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
+
+.campo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.input-text {
+  width: 100%;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  padding: 1rem;
+  border-radius: 6px;
+  color: #fff;
+  font-family: var(--font-body);
+}
+
+.input-text:focus {
+  outline: none;
+  border-color: #00f2ff;
+  box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.1);
+}
+
+/* --- Footer --- */
+.footer {
+  border-top: 1px solid var(--surface-border);
+  padding: 4rem 0 2rem;
+  background: #000;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer h4 { color: #fff; margin-bottom: 1.5rem; }
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 0.8rem; }
+.footer a { color: var(--text-secondary); text-decoration: none; }
+.footer a:hover { color: #00f2ff; }
+
+.copyright {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--surface-border);
+  padding-top: 2rem;
+}
+
+/* WhatsApp Floating Action Button (FAB) */
+.whatsapp-fab{position:fixed;right:1.6rem;bottom:1.6rem;width:56px;height:56px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#25D366,#1DA851);box-shadow:0 12px 28px rgba(37,211,102,0.18);z-index:1200;color:#fff;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.whatsapp-fab svg{width:28px;height:28px}
+.whatsapp-fab:hover{transform:scale(1.06);box-shadow:0 18px 38px rgba(37,211,102,0.22)}
+.whatsapp-fab:focus{outline:3px solid rgba(37,211,102,0.22);outline-offset:4px}
+
+@media(max-width:420px){
+  .whatsapp-fab{right:12px;bottom:12px;width:48px;height:48px}
+  .whatsapp-fab svg{width:22px;height:22px}
+}
+
+/* Alertas de formulario */
+.form-status{margin-top:1rem;padding:1rem;border-radius:8px;display:block;font-weight:600}
+.form-status.success{background:#e6fffa;color:#064e3b;border:1px solid #9ae6b4}
+.form-status.error{background:#fff1f2;color:#701a1a;border:1px solid #fecaca}
+.boton[disabled]{opacity:.6;cursor:not-allowed}
+
+/* Media Queries (Móvil) */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--surface-border);
+    display: none; /* JS controlará esto */
+  }
+  
+  .menu[data-visible="true"] { display: flex; }
+  
+  .hero-title { font-size: 2.5rem; }
+}

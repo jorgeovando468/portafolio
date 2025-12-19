@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio — Jorge Daniel Ovando Guerrero</title>
+  <meta name="description" content="Portafolio profesional — Desarrollo Web, UI/UX, Frontend. Disponibilidad inmediata.">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header nav-bg" role="banner">
+    <div class="contenedor navegacion-principal">
+      <a class="brand" href="#inicio">Jorge Daniel Ovando Guerrero</a>
+      <nav class="nav" role="navigation" aria-label="Navegación principal">
+        <button id="btn-menu" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="menu" class="menu" data-visible="false">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero" aria-label="Introducción">
+      <div class="contenido-hero contenedor">
+        <h1 class="hero-title">Diseño & Desarrollo Web Profesional</h1>
+        <p class="hero-subtitle">Creo interfaces limpias, accesibles y orientadas a resultados para marcas y startups.</p>
+        <div class="hero-meta">
+          <span class="chip">📍 Ciudad — Remoto</span>
+          <span class="chip">⏱️ Disponible: Inmediato</span>
+          <span class="chip">💼 +2 años trabajando con Frontend</span>
+        </div>
+        <div class="hero-ctas">
+          <a class="boton primary" href="#contacto">Contactar</a>
+          <a class="boton ghost" href="#proyectos">Ver proyectos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="seccion contenedor sombra" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo" class="titulo">Sobre mí</h2>
+      <div class="sobre-grid">
+        <div class="sobre-texto">
+          <p>Soy desarrollador frontend y diseñador UI/UX con experiencia en crear productos digitales centrados en el usuario. Me especializo en HTML, CSS moderno y JavaScript, construyendo experiencias rápidas y accesibles.</p>
+          <ul class="skills-list">
+            <li>HTML semántico & accesibilidad</li>
+            <li>CSS moderno (Grid / Flex / Animaciones suaves)</li>
+            <li>JavaScript moderno y arquitecturas simples</li>
+          </ul>
+        </div>
+        <div class="sobre-imagen" aria-hidden="true">Foto/Ilustración</div>
+      </div>
+    </section>
+
+    <section id="servicios" class="seccion contenedor" aria-labelledby="servicios-titulo">
+      <h2 id="servicios-titulo" class="titulo">Servicios</h2>
+      <div class="grid-servicios">
+        <article class="card servicio">
+          <h3>Diseño UI/UX</h3>
+          <p>Wireframes, prototipos y diseño visual orientado a conversión y usabilidad.</p>
+        </article>
+        <article class="card servicio">
+          <h3>Desarrollo Frontend</h3>
+          <p>Implementación pixel-perfect con HTML, CSS y JavaScript moderno.</p>
+        </article>
+        <article class="card servicio">
+          <h3>Optimización de rendimiento</h3>
+          <p>Mejoras de carga, accesibilidad y buenas prácticas SEO técnico.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyectos" class="seccion contenedor" aria-labelledby="proyectos-titulo">
+      <h2 id="proyectos-titulo" class="titulo">Proyectos seleccionados</h2>
+      <div class="grid-proyectos">
+        <!-- 6 cards -->
+        <article class="card proyecto">
+          <div class="proyecto-media">
+            <img src="img/consultorio.png" alt="Consultorio Psicológico — captura del proyecto" loading="lazy">
+          </div>
+          <h3>Consultorio Psicológico</h3>
+          <p>Landing para consulta psicológica con foco en usabilidad, confianza y proceso de contacto.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>UX</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="https://landing-consultorio-psicologia.vercel.app/">Demo</a>
+            <a class="btn small ghost" href="https://github.com/jorgeovando468/landing-consultorio-psicologia">GitHub</a>
+          </div>
+        </article>
+        <article class="card proyecto">
+          <div class="proyecto-media" aria-hidden="true">Imagen 2</div>
+          <h3>Proyecto Dos</h3>
+          <p>Descripción corta del proyecto con enfoque en interacción.</p>
+          <div class="tags"><span>React</span><span>CSS</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="#">Demo</a>
+            <a class="btn small ghost" href="#">GitHub</a>
+          </div>
+        </article>
+        <article class="card proyecto">
+          <div class="proyecto-media" aria-hidden="true">Imagen 3</div>
+          <h3>Proyecto Tres</h3>
+          <p>Web app con atención a accesibilidad y rendimiento.</p>
+          <div class="tags"><span>Node</span><span>JS</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="#">Demo</a>
+            <a class="btn small ghost" href="#">GitHub</a>
+          </div>
+        </article>
+        <article class="card proyecto">
+          <div class="proyecto-media" aria-hidden="true">Imagen 4</div>
+          <h3>Proyecto Cuatro</h3>
+          <p>Landing orientada a conversión para producto SaaS.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="#">Demo</a>
+            <a class="btn small ghost" href="#">GitHub</a>
+          </div>
+        </article>
+        <article class="card proyecto">
+          <div class="proyecto-media" aria-hidden="true">Imagen 5</div>
+          <h3>Proyecto Cinco</h3>
+          <p>Componente UI reutilizable y testado.</p>
+          <div class="tags"><span>JS</span><span>Web Components</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="#">Demo</a>
+            <a class="btn small ghost" href="#">GitHub</a>
+          </div>
+        </article>
+        <article class="card proyecto">
+          <div class="proyecto-media" aria-hidden="true">Imagen 6</div>
+          <h3>Proyecto Seis</h3>
+          <p>Automatización y optimización de procesos frontend.</p>
+          <div class="tags"><span>Tooling</span><span>CSS</span></div>
+          <div class="proyecto-ctas">
+            <a class="btn small" href="#">Demo</a>
+            <a class="btn small ghost" href="#">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonios" class="seccion contenedor" aria-labelledby="testimonios-titulo">
+      <h2 id="testimonios-titulo" class="titulo">Testimonios</h2>
+      <div class="grid-testimonios">
+        <blockquote class="card testimonio">
+          <p>"Excelente trabajo: rápida entrega y diseño impecable."</p>
+          <footer>— Cliente A, CEO</footer>
+        </blockquote>
+        <blockquote class="card testimonio">
+          <p>"Gran comunicación y resultados medibles en conversión."</p>
+          <footer>— Cliente B, Product Manager</footer>
+        </blockquote>
+        <blockquote class="card testimonio">
+          <p>"Profesional, orientado a detalles y buenas prácticas."</p>
+          <footer>— Cliente C, Founder</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion contenedor sombra" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo" class="titulo">Contacto</h2>
+      <form id="contactForm" class="formulario" aria-label="Formulario de contacto">
+        <fieldset>
+          <legend class="sr-only">Formulario de contacto</legend>
+          <div class="contenedor-campos">
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" class="input-text" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="campo">
+              <label for="telefono">Teléfono (opcional)</label>
+              <input id="telefono" name="telefono" class="input-text" type="tel" placeholder="+595XXXXXXXX" >
+            </div>
+            <div class="campo">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" class="input-text" type="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="campo campo--full">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" class="input-text" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+            </div>
+            <!-- Honeypot anti-spam (oculto) -->
+            <div class="sr-only">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" autocomplete="off">
+            </div>
+          </div>
+          <div class="alinear-derecha">
+            <button id="contactSubmit" type="submit" class="boton primary">Enviar mensaje</button>
+          </div>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer nav-bg" role="contentinfo">
+    <div class="contenedor footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#inicio">Jorge Daniel Ovando Guerrero</a>
+        <p>Diseño & Desarrollo Web — Disponible para proyectos freelance</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul class="footer-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sígueme</h4>
+        <ul class="socials">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contenedor copyright">© <span id="year">2025</span> Jorge Daniel Ovando Guerrero. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- EmailJS SDK (client-side). Paste your IDs below and remove placeholders -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js" defer></script>
+  <script>
+    // Configura tus credenciales de EmailJS aquí (reemplaza los valores)
+    // Obténlos en https://dashboard.emailjs.com/
+    window.EMAILJS_SERVICE_ID = 'service_fainh0d';
+    window.EMAILJS_TEMPLATE_ID = 'template_lomlzpe';
+    window.EMAILJS_PUBLIC_KEY = 'RT8G_-bqaMNzxdQ_r';
+  </script>
+  <script src="js/script.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- Botón flotante WhatsApp -->
+  <a id="whatsapp-fab" class="whatsapp-fab" href="https://wa.me/595976578699?text=Hola%20Jorge%2C%20vi%20tu%20portafolio%20y%20quiero%20consultarte%20por%20un%20proyecto.%20%C2%BFEst%C3%A1s%20disponible%3F" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <!-- SVG WhatsApp -->
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.373 0 .03 5.344.03 11.97c0 2.11.552 4.167 1.6 5.98L0 24l6.2-1.62a11.95 11.95 0 005.8 1.48c6.627 0 12-5.373 12-12 0-3.2-1.25-6.2-3.48-8.28z" fill="#25D366"/>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.1-.47-.149-.67.15-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.884-.788-1.48-1.761-1.653-2.058-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.173.2-.298.3-.497.1-.198.05-.372-.025-.52-.075-.149-.67-1.612-.917-2.207-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487  .709.306 1.26.49 1.692.626.71.227 1.356.195 1.87.118.57-.085 1.758-.719 2.007-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#fff"/>
+    </svg>
+  </a>
+</body>
+</html>
